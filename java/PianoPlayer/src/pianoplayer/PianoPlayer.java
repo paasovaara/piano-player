@@ -2,10 +2,14 @@ package pianoplayer;
 
 import org.jfugue.midi.MidiParser;
 import org.jfugue.pattern.Pattern;
+import org.jfugue.player.ManagedPlayer;
 import org.jfugue.player.Player;
+import org.jfugue.player.SequencerManager;
 import org.staccato.StaccatoParserListener;
 
 import javax.sound.midi.MidiSystem;
+import javax.sound.midi.Sequencer;
+import javax.sound.midi.ShortMessage;
 import java.io.File;
 
 public class PianoPlayer {
@@ -33,16 +37,26 @@ public class PianoPlayer {
         // TODO Auto-generated method stub
         System.out.println("Miko toimiiko tämä?");
 
-        PianoPlayer player = new PianoPlayer();
         try {
-            player.play();
+            //PianoPlayer player = new PianoPlayer();
+            //player.play();
 
+
+            Player player2 = new Player();
+            //player2.getManagedPlayer();
+            MyMidiParserListener listener = new MyMidiParserListener();
+            Sequencer sequencer = SequencerManager.getInstance().getDefaultSequencer();
+
+            int[] codes = new int[] {ShortMessage.NOTE_ON, ShortMessage.NOTE_OFF};
+            sequencer.addControllerEventListener(listener, codes);
+            sequencer.addMetaEventListener(listener);
+
+            player2.play("C D E F G A B");
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        Player player2 = new Player();
-        player2.play("C D E F G A B");
+
 	}
 
 }
