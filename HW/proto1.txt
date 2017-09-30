@@ -1,8 +1,8 @@
 Proto1 - BOM
 -------
-Arduino Mega
+Arduino Uno 
 breadboard, jumpers
-MOSFET transistor
+IRF520 MOSFET
 Diode
 Push button
 10k Resistor
