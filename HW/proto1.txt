@@ -1,0 +1,16 @@
+Proto1 - BOM
+-------
+Arduino Mega
+breadboard, jumpers
+MOSFET transistor
+Diode
+Push button
+10k Resistor
+12V Power supply
+Pull Solenoid with enough force at 5mm stroke. (*)
+Legos
+
+(*) I used SMO-0837 from http://www.tai-shing.com.tw/EN/solenoid/solenoid-Solenoid-open.cfm
+which has just barely enough force (800g at 1mm stroke, 180g at 5mm stroke, power 4W). More would be better
+
+Breadboard layout picture made with Fritzing (http://fritzing.org)
